@@ -31,7 +31,7 @@
         </div>
       </div>
     </section>
-
+    <!--
     <section class="learn-more">
       <div class="info">
         <h2>Lo que hacemos</h2>
@@ -55,6 +55,11 @@
         </div>
       </div>
     </section>
+    -->
+
+    <section class="banner"></section>
+
+    <section class="banner"></section>
 
     <section class="banner"></section>
 
@@ -213,6 +218,7 @@ export default {
 
 /*BANNER */
 .banner {
+  margin-top: 30px;
   height: 500px;
   background: #00afc1;
 }
