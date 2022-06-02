@@ -10,44 +10,54 @@
           <form>
             <p>
               <label>Nombres</label>
-              <input type="text" name="name" class="textfield" />
+              <input type="text" name="signup" class="textfield" />
             </p>
 
             <p>
               <label>Apellidos</label>
-              <input type="text" name="company" class="textfield" />
+              <input type="text" name="signup" class="textfield" />
             </p>
 
             <p>
               <label>Nacionalidad</label>
-              <input type="text" name="email" class="textfield" />
+              <input type="text" name="signup" class="textfield" />
             </p>
 
             <p>
               <label>Ciudad</label>
-              <input type="text" name="phone" class="textfield" />
+              <input type="text" name="signup" class="textfield" />
             </p>
 
             <p>
               <label>Tipo de documento</label>
-              <input type="text" name="name" class="textfield" />
+              <select name="document_type" class="textfield">
+                <option>Cédula de ciudadanía</option>
+                <option>Cédula de extranjería</option>
+                <option>Pasaporte</option>
+              </select>
             </p>
 
             <p>
               <label>N° de documento</label>
-              <input type="text" name="company" class="textfield" />
+              <input type="text" name="signup" class="textfield" />
             </p>
 
             <p>
               <label>Fecha de nacimiento</label>
-              <input type="text" name="email" class="textfield" />
+              <input
+                type="date"
+                name="signup"
+                value="2004-06-01"
+                min="1922-01-01"
+                max="2004-06-01"
+                class="textfield"
+              />
             </p>
 
             <p>
               <label>Correo</label>
-              <input type="text" name="phone" class="textfield" />
+              <input type="text" name="signup" class="textfield" />
             </p>
-
             <input type="submit" class="btn" value="Registrarse" />
           </form>
         </div>
@@ -59,9 +69,6 @@
 <script>
 export default {
   name: "SignUpPage",
-  props: {
-    msg: String,
-  },
 };
 </script>
 
@@ -85,7 +92,13 @@ export default {
 }
 
 .container-signUp {
-  margin: 0 auto;
+  margin-right: 10px;
+}
+
+@media only screen and (min-width: 1000px) {
+  .container-signUp {
+    margin: 0 auto;
+  }
 }
 
 .container-signUp h3 {

@@ -32,12 +32,10 @@
                 v-model="password"
               />
             </p>
-            <input type="submit" class="btn" value="Ingresar" />
+            <input type="submit" class="btn" value="Ingresar" id="btn-logIn" />
           </form>
           <a href="#">Olvidé mi <span>contraseña</span></a>
-          <div class="alert" v-if="error">
-            Datos incorrectos
-          </div>
+          <div class="alert" v-if="error">Datos incorrectos</div>
         </div>
       </div>
     </main>
@@ -59,7 +57,7 @@ export default {
   methods: {
     loginEvent() {
       // cuando el usuario ingresa sus datos y presiona 'iniciar sesión'
-      let userJson = {
+      /*let userJson = {
         //array con los datos ingresados por el usuario para su validación
         user: this.username,
         password: this.password,
@@ -67,15 +65,17 @@ export default {
       //Mediante el método post se envía el array con los datos del usuario a la api rest y esta debe retornar una respueta
       axios.post("link-api-rest", userJson).then((data) => {
         console.log(data); //muestra el resultado de la validación en consola
-
+        let estado = true;
         if (data.data.status == "OK") {
           //El usuario ingresa al sistema
+          this.$router.push('dashboard');
         } else {
           this.error_msg = true;
           this.error_msg = "mensaje de error";
           //Se le notifica al usuario que sus datos son incorrectos
         }
-      });
+      });*/
+        this.$router.push("dashboard");
     },
   },
 };
@@ -182,12 +182,12 @@ export default {
 }
 
 .alert {
-    height: 50px;
-    background-color: #ff000080;
-    color: #fff;
-    font-weight: bold;
-    border-radius: 10px;
-    padding-top: 15px;
-    margin-top: 30px;
+  height: 50px;
+  background-color: #ff000080;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 10px;
+  padding-top: 15px;
+  margin-top: 30px;
 }
 </style>

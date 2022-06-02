@@ -95,7 +95,6 @@
 </template>
 
 <script>
-
 </script>
 
 <style>
@@ -121,32 +120,36 @@ ul {
 /*HEADER STYLES*/
 .header {
   background-color: #fff;
-  height: 70px;
-  margin: 0 100px;
+  height: 120px;
+  margin: 0;
   text-align: center;
 }
 
 .header-nav {
-  width: 95%;
+  width: 100%;
   display: flex;
+  flex-direction: column;
 }
 
-.nav-logo a h1{
-  font-size: 60px;
+.nav-logo a h1 {
+  font-size: 30px;
   color: #0093ab;
-  margin-top: -7px;
+  margin: 10px auto 0;
+  width: 120px;
+  transition: all 0.6s ease-in-out;
 }
 
 .nav-menu {
   width: 100%;
+  height: 0;
   margin: 10px 10px;
+  font-size: 12px;
+  transform: translateX(-700px);
+  transition: all 0.6s ease-in-out;
 }
 .nav-menu ul {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 20px;
-  color: #0093ab;
+  gap: 15px;
 }
 
 .nav-menu ul li a {
@@ -160,6 +163,10 @@ ul {
 .nav-buttons-right ul {
   display: flex;
   gap: 20px;
+  margin: 0 auto;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
+  width: 260px;
 }
 
 .nav-buttons-right ul li .btn {
@@ -167,9 +174,11 @@ ul {
   border-radius: 35px;
   color: #0093ab;
   display: block;
-  font-size: 16px;
+  font-size: 12x;
   font-weight: bold;
-  padding: 7px 38px;
+  padding: 10px 0;
+  width: 120px;
+  margin: 0 auto;
   transition: all 0.3s ease-in-out;
 }
 
@@ -177,6 +186,47 @@ ul {
   border: 1px solid #fff;
   background-color: #0093ab;
   color: #fff;
+}
+
+@media only screen and (min-width: 700px) {
+  .header {
+    height: 70px;
+    margin: 0 10px;
+  }
+
+  .header-nav {
+    flex-direction: row;
+  }
+
+  .nav-menu {
+    position: relative; /* Fixed position on mobile */
+    transform: translateX(0);
+  }
+
+  .nav-menu ul {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .nav-buttons-right ul {
+    margin: 20px auto 0;
+    width: 260px;
+  }
+
+  .nav-buttons-right ul li .btn {
+    display: block;
+    width: 120px;
+    font-size: 14px;
+    padding: 7px 0;
+  }
+}
+
+@media only screen and (min-width: 1005px) {
+  .nav-logo a h1 {
+    width: 100%;
+    font-size: 60px;
+    margin-top: -7px;
+  }
 }
 
 /*FOOTER*/
